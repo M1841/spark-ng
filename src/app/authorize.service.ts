@@ -17,10 +17,10 @@ export class AuthorizeService {
   authorize() {
     const params = new HttpParams({
       fromObject: {
-        client_id: '[Your Client ID]',
+        client_id: '[Your-Client-ID]',
         response_type: 'token',
         redirect_uri: 'http://localhost:4200/',
-        scope: 'user-read-private user-read-email'
+        scope: 'user-read-private user-read-email playlist-modify-public playlist-modify-private'
       }
     });
     const url = 'https://accounts.spotify.com/authorize?' + params.toString();

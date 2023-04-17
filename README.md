@@ -1,6 +1,6 @@
 # spark-ng
 
-A passion project Spotify companion app that's meant to include features such as advanced shuffling, detailed statistics, personalized recommendations, trivia minigames and more. The project was just started and it's got a long way before becoming what it's meant to be, but I am determined to making it be my next big thing, and I'll make sure to enjoy the process. As always, feedback, suggestions and any kind of thoughts related to the project are welcome in [Contact](#contact).
+A passion project Spotify companion app that's meant to include features such as advanced shuffling, detailed statistics, personalized recommendations, trivia minigames and more. The project was just started and it's got a long way before becoming what it's meant to be, but I am determined to make it my next big thing, and I'll make sure to enjoy every step the process. As always, feedback, suggestions and any kind of thoughts related to the project are welcome in [Contact](#contact).
 
 ## Getting Started
 
@@ -10,23 +10,23 @@ A passion project Spotify companion app that's meant to include features such as
 
 ``
 
-    git clone https://github.com/m1841/spark-nd.git
+    git clone https://github.com/m1841/spark-ng.git
 ``
 
 2. Sign up for a [Spotify Developer](https://developer.spotify.com) account
 3. Create a new app from your [Dashboard](https://developer.spotify.com/dashboard/create)
 4. Add `http://localhost:4200/` to the `Rediect URIs` field in you App's settings
-5. Copy your `Client ID` from the app's settings and replace '[Your Client ID] from inside `src/app/authorize.service.ts` and save the change
+5. Copy your `Client ID` from the app's settings and replace `[Your-Client-ID]` from inside `src/app/authorize.service.ts` and save the change
 
 ``
 
     ...
     const params = new HttpParams({
       fromObject: {
-        client_id: '[Your Client ID]',
+        client_id: '[Your-Client-ID]',
         response_type: 'token',
         redirect_uri: 'http://localhost:4200/',
-        scope: 'user-read-private user-read-email'
+        scope: 'user-read-private user-read-email playlist-modify-public playlist-modify-private'
       }
     });
     ...

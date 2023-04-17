@@ -8,9 +8,12 @@ import { AuthorizeService } from '../authorize.service';
 })
 export class AuthorizeComponent {
 
-  public userData: any;
+  public userData: any = null;
   public flagUrl: string = '';
-  public playlists: any;
+  public playlists: any = null;
+  public isModalOpen: boolean = false;
+  public selectedPlaylist: any = null;
+  public isLoading: boolean = false;
 
   constructor(private authorizeService: AuthorizeService) {}
 
@@ -20,12 +23,30 @@ export class AuthorizeComponent {
       this.authorizeService.getUserData().then((data) => {
         this.userData = data;
         this.flagUrl = 'http://purecatamphetamine.github.io/country-flag-icons/3x2/'+ data.country + '.svg';
-        console.log(data);
         this.playlists = this.authorizeService.getPlaylists();
-        console.log(this.playlists);
       });
     } else {
-      this.authorizeService.authorize();
+      //this.authorizeService.authorize();
     }
+  }
+  logIn() {
+    console.log(this.userData);
+    this.authorizeService.authorize();
+  }
+
+  openShuffleModal(playlist: any) {
+    this.isModalOpen = true;
+    this.selectedPlaylist = playlist;
+  }
+  closeShuffleModal() {
+    this.isModalOpen = false;
+    this.selectedPlaylist = null;
+  } 
+  
+  startLoading() {
+    this.isLoading = true;
+    setTimeout(function(){
+      window.location.reload();
+    }, 1500);
   }
 }
