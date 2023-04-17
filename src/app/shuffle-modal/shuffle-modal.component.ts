@@ -28,6 +28,7 @@ export class ShuffleModalComponent {
       const user = await this.spotifyApi.getMe();
       const newPlaylist = await this.spotifyApi.createPlaylist(user.id, { name: playlist.name + ' - Shuffled' });
       await this.addTracksToPlaylist(newPlaylist.id, shuffledTracks);
+      location.reload();
     } catch (err) {
       console.log("Error: " + err);
     }

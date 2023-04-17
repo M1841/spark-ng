@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./loading-spinner.component.css']
 })
 export class LoadingSpinnerComponent {
+  /*
+  public loadingText: string = 'Loading';
+  public dots: string = '';
 
+  updateDots() {
+    this.dots = this.dots.length < 3 ? this.dots + '.' : '';
+    this.loadingText = 'Loading' + this.dots;
+  }
+
+  ngOnInit() {
+    setInterval(() => this.updateDots(), 1000);
+  }
+  */
 }

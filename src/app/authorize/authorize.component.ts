@@ -45,8 +45,5 @@ export class AuthorizeComponent {
   
   startLoading() {
     this.isLoading = true;
-    setTimeout(function(){
-      window.location.reload();
-    }, 1500);
   }
 }
