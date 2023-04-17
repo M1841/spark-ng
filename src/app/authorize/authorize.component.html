@@ -5,33 +5,33 @@
     <div class="flex flex-col pt-24 pb-10 bg-gradient-to-br from-cyan-600 via-indigo-500 to-purple-500">
         <div class="relative h-fit w-fit mx-auto">
             <a [href]="userData.external_urls.spotify" target="_blank">
-                <img [src]="userData.images[0].url" alt="Profile Picture" class="rounded-md h-24 w-24 mb-4 drop-shadow-md transition duration-100 ease-in-out transform hover:scale-110">
+                <img [src]="userData.images[0].url" alt="Profile Picture" class="rounded-md h-24 w-24 mb-4 drop-shadow-md sm:transition sm:duration-100 sm:ease-in-out sm:transform sm:hover:scale-110">
             </a>
             <img [src]="flagUrl" class="absolute bottom-[5.75rem] left-20 h-8 w-8 drop-shadow-md">
         </div>
         <a [href]="userData.external_urls.spotify" target="_blank" class="m-auto">
-            <h1 class="text-xl font-normal drop-shadow-md transition duration-100 ease-in-out transform hover:scale-110">{{ userData.display_name }}</h1>
+            <h1 class="text-xl font-normal drop-shadow-md sm:transition sm:duration-100 sm:ease-in-out sm:transform sm:hover:scale-110">{{ userData.display_name }}</h1>
         </a>
         <p class="mx-auto mb-3 drop-shadow-md">{{ userData.followers.total }} followers</p>
     </div>
     <div>
         <h1 class="text-2xl p-4 pb-0 font-normal drop-shadow-md">Your playlists:</h1>
         <div class="flex flex-col sm:flex-row gap-4 p-4 flex-wrap sm:justify-center">
-            <div *ngFor="let playlist of playlists.__zone_symbol__value.items" class="w-[100%] sm:w-auto border-solid border-[1px] border-zinc-700 rounded-md p-4 bg-gradient-to-br from-zinc-800 to-zinc-900 drop-shadow-md flex justify-center">
-                <div class="flex sm:flex-col gap-6 sm:gap-4 sm:w-48 justify-between sm:justify-center">
+            <div *ngFor="let playlist of playlists.__zone_symbol__value.items" class="w-full sm:w-auto border-solid border-[1px] border-zinc-700 rounded-md p-4 bg-gradient-to-br from-zinc-800 to-zinc-900 drop-shadow-md flex justify-center">
+                <div class="flex sm:flex-col gap-6 sm:gap-4 sm:w-48 justify-between sm:justify-center w-full">
                     <div class="flex sm:flex-col gap-4 sm:gap-4">
                         <a [href]="playlist.external_urls.spotify" target="_blank" class="w-20 h-20 m-auto flex-none">
-                            <img [src]='(playlist.images[0] !== undefined ? playlist.images[0].url : "assets/empty_playlist.png")' alt="Playlist Picture" class="rounded-md h-20 w-20 drop-shadow-md transition duration-100 ease-in-out transform hover:scale-110">
+                            <img [src]='(playlist.images[0] !== undefined ? playlist.images[0].url : "assets/empty_playlist.png")' alt="Playlist Picture" class="rounded-md h-20 w-20 drop-shadow-md sm:transition sm:duration-100 sm:ease-in-out sm:transform sm:hover:scale-110">
                         </a>
                         <div class="flex flex-col justify-center">
                             <a [href]="playlist.external_urls.spotify" target="_blank">
-                                <h1 class="text-xl sm:text-center font-normal origin-bottom-left sm:origin-center drop-shadow-md transition duration-100 ease-in-out transform hover:scale-110">{{ playlist.name }}</h1>
+                                <h1 class="text-xl sm:text-center font-normal origin-bottom-left sm:origin-center drop-shadow-md sm:transition sm:duration-100 sm:ease-in-out sm:transform sm:hover:scale-110">{{ playlist.name }}</h1>
                             </a>
                             <p class="sm:text-center drop-shadow-md">{{ playlist.tracks.total }} tracks</p>
                         </div>
                     </div>
                     <div class="flex justify-center gap-4">
-                        <button (click)="openShuffleModal(playlist)" class="bg-gradient-to-br from-lime-500 via-green-600 to-emerald-600 w-fit h-fit my-auto p-2 rounded-md material-symbols-outlined drop-shadow-md transition duration-100 ease-in-out transform hover:scale-110 flex gap-2">
+                        <button (click)="openShuffleModal(playlist)" class="bg-gradient-to-br from-lime-500 via-green-600 to-emerald-600 w-fit h-fit my-auto p-2 rounded-md material-symbols-outlined drop-shadow-md sm:transition sm:duration-100 sm:ease-in-out sm:transform sm:hover:scale-110 flex gap-2">
                             shuffle
                             <span class="text-sm font-medium inline-flex flex-col justify-center">Shuffle</span>
                         </button>
@@ -41,12 +41,12 @@
         </div>
     </div>
     <div class="bg-zinc-900 text-white font-normal p-2">
-        <a href="https://github.com/M1841" class="block transition duration-100 ease-in-out transform hover:scale-110 w-fit mx-auto">© Mihai Mureșan 2023</a>
+        <a href="https://github.com/M1841" class="block sm:transition sm:duration-100 sm:ease-in-out sm:transform sm:hover:scale-110 w-fit mx-auto">© Mihai Mureșan 2023</a>
     </div>
 </div>
 
 <div *ngIf="!userData" class="bg-zinc-800 text-white pt-72 sm:pt-80">
-    <button (click)="logIn()" class="bg-gradient-to-br from-lime-500 via-green-600 to-emerald-600 w-fit h-fit mx-auto p-2 rounded-md material-symbols-outlined drop-shadow-md transition duration-100 ease-in-out transform hover:scale-110 flex gap-2">
+    <button (click)="logIn()" class="bg-gradient-to-br from-lime-500 via-green-600 to-emerald-600 w-fit h-fit mx-auto p-2 rounded-md material-symbols-outlined drop-shadow-md sm:transition sm:duration-100 sm:ease-in-out sm:transform sm:hover:scale-110 flex gap-2">
         login
         <span class="text-sm font-medium inline-flex flex-col justify-center">Login In with Spotify</span>
     </button>
