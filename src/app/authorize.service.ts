@@ -17,7 +17,7 @@ export class AuthorizeService {
   authorize() {
     const params = new HttpParams({
       fromObject: {
-        client_id: '[Your-Client-ID]',
+        client_id: '58af03bac17b49ba814fb1c6762ee813',
         response_type: 'token',
         redirect_uri: 'http://localhost:4200/',
         scope: 'user-read-private user-read-email playlist-modify-public playlist-modify-private'
